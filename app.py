@@ -61,7 +61,7 @@ paper_repos_dict = {
                     'Year' : [],
                     'Author' : [],
                     'Citation' : [],
-                    'Publication' : [],
+                    'Publication site' : [],
                     'Url of paper' : [] }
 
 # adding information in repository
