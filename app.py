@@ -18,8 +18,8 @@ html_temp = """
 
 with st.sidebar:
     st.markdown("""
-    # Scholar Scrap
-    A tool to extract relevant information (paper title, year, author, URL, publication site) on research papers from Google Scholar, based on user input. 
+    ## Scholar Scrap
+    A tool to extract relevant information _(Paper title, Year, author, URL, publication site)_ on research papers from Google Scholar, based on user input. 
     """)
     
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
@@ -70,7 +70,7 @@ def add_in_paper_repo(papername,year,author,cite,publi,link):
   paper_repos_dict['Year'].extend(year)
   paper_repos_dict['Author'].extend(author)
   paper_repos_dict['Citation'].extend(cite)
-  paper_repos_dict['Publication'].extend(publi)
+  paper_repos_dict['Publication site'].extend(publi)
   paper_repos_dict['Url of paper'].extend(link)
   for i in paper_repos_dict.keys():
     print(i,": ", len(paper_repos_dict[i]))
