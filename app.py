@@ -9,7 +9,7 @@ from time import sleep
 import plotly.express as px
 from function import get_paperinfo, get_tags, get_papertitle, get_citecount, get_link, get_author_year_publi_info, cite_number, convert_df
 
-st.set_page_config(page_title="Scholar Scrap")
+st.set_page_config(page_title="Scholar Scrap", layout="wide")
 html_temp = """
                     <div style="background-color:{};padding:1px">
                     
@@ -19,7 +19,7 @@ html_temp = """
 with st.sidebar:
     st.markdown("""
     # Scholar Scrap
-    A tool to extract relevant information _(Paper title, Year, author, URL, publication site)_ on research papers from Google Scholar, based on user input. 
+    A tool to extract the relevant information of research papers from Google Scholar based on user input. 
     """)
     
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
