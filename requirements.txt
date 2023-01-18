@@ -1,4 +1,5 @@
-pandas
+plotly
 requests
+pandas
 beautifulsoup4
 streamlit
