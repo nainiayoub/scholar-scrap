@@ -7,7 +7,7 @@ import re
 import time
 from time import sleep
 import plotly.express as px
-from function import get_paperinfo, get_tags, get_papertitle, get_citecount, get_link, get_author_year_publi_info, cite_number
+from function import get_paperinfo, get_tags, get_papertitle, get_citecount, get_link, get_author_year_publi_info, cite_number, convert_df
 
 st.set_page_config(page_title="Scholar Scrap")
 html_temp = """
@@ -84,8 +84,11 @@ headers = {'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 url_begin = 'https://scholar.google.com/scholar?start={}&q='
 url_end = '&hl=en&as_sdt=0,5='
 # input
-text_input = st.text_input("Search in Google Scholar", placeholder="What are you looking for?")
-total_to_scrap = st.slider("How many pages to scrap?", min_value=1, max_value=5, step=1, value=2)
+col1, col2 = st.column(2)
+with col1:
+  text_input = st.text_input("Search in Google Scholar", placeholder="What are you looking for?")
+with col2:
+  total_to_scrap = st.slider("How many pages to scrap?", min_value=1, max_value=5, step=1, value=2)
 
 st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
 # create scholar url
@@ -124,15 +127,28 @@ if text_input:
             # sleep(10)
         final['Year'] = final['Year'].astype('int')
         final['Citation'] = final['Citation'].apply(cite_number).astype('int')
+
         with st.expander("Extracted papers"):
           st.dataframe(final)
+          csv = convert_df(final)
+          file_name_value = "_".join(text_input.split())+'.csv'
+          st.download_button(
+              label="Download data as CSV",
+              data=csv,
+              file_name=file_name_value,
+              mime='text/csv',
+          )
 
+        size_button = st.checkbox('Set Citation as bubble size')
+        size_value = None
+        if size_button:
+          size_value = 'Citation'
         fig = px.scatter(
               final, 
               x="Year", 
               y="Citation", 
               color="Publication",
-              size="Citation", 
+              size=size_value, 
               log_x=True, 
               size_max=60
               )
