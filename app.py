@@ -18,7 +18,7 @@ html_temp = """
 
 with st.sidebar:
     st.markdown("""
-    ## Scholar Scrap
+    # Scholar Scrap
     A tool to extract relevant information _(Paper title, Year, author, URL, publication site)_ on research papers from Google Scholar, based on user input. 
     """)
     
@@ -48,7 +48,7 @@ st.markdown(hide, unsafe_allow_html=True)
 
 # title
 st.markdown("""
-# Scholar Scrap
+## Scholar Scrap
 Scraping relevant information of research papers from Google Scholar.
 """)
 
@@ -151,7 +151,7 @@ if text_input:
                 final, 
                 x="Year", 
                 y="Citation", 
-                color="Publication",
+                color="Publication site",
                 size=size_value, 
                 log_x=True, 
                 size_max=60
