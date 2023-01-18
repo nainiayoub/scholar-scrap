@@ -84,7 +84,7 @@ headers = {'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 url_begin = 'https://scholar.google.com/scholar?start={}&q='
 url_end = '&hl=en&as_sdt=0,5='
 # input
-col1, col2 = st.column(2)
+col1, col2 = st.columns(2)
 with col1:
   text_input = st.text_input("Search in Google Scholar", placeholder="What are you looking for?")
 with col2:
