@@ -9,11 +9,50 @@ from time import sleep
 import plotly.express as px
 from function import get_paperinfo, get_tags, get_papertitle, get_citecount, get_link, get_author_year_publi_info, cite_number
 
+st.set_page_config(page_title="Scholar Scrap")
+html_temp = """
+                    <div style="background-color:{};padding:1px">
+                    
+                    </div>
+                    """
+
+with st.sidebar:
+    st.markdown("""
+    # Scholar Scrap
+    A tool to extract relevant information (paper title, year, author, URL, publication site) on research papers from Google Scholar, based on user input. 
+    """)
+    
+    st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
+    st.markdown("""
+    # How does it work?
+    Enter your keywords in the text field and select how many pages to scrap from Google Scholar results.  
+    """)
+
+    st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
+    st.markdown("""
+    Made by [@nainia_ayoub](https://twitter.com/nainia_ayoub) 
+    """)
+
+hide="""
+<style>
+footer{
+	visibility: hidden;
+    position: relative;
+}
+.viewerBadge_container__1QSob{
+    visibility: hidden;
+}
+<style>
+"""
+st.markdown(hide, unsafe_allow_html=True)
+
 # title
 st.markdown("""
 # Scholar Scrap
 Scraping relevant information of research papers from Google Scholar.
 """)
+
+
 
 # scraping function
 # creating final repository
@@ -47,6 +86,8 @@ url_end = '&hl=en&as_sdt=0,5='
 # input
 text_input = st.text_input("Search in Google Scholar", placeholder="What are you looking for?")
 total_to_scrap = st.slider("How many pages to scrap?", min_value=1, max_value=5, step=1, value=2)
+
+st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
 # create scholar url
 if text_input:
     text_formated = "+".join(text_input.split())
