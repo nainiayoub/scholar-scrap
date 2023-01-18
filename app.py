@@ -84,7 +84,7 @@ headers = {'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 url_begin = 'https://scholar.google.com/scholar?start={}&q='
 url_end = '&hl=en&as_sdt=0,5='
 # input
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([3,1])
 with col1:
   text_input = st.text_input("Search in Google Scholar", placeholder="What are you looking for?")
 with col2:
@@ -139,20 +139,22 @@ if text_input:
               mime='text/csv',
           )
 
-        size_button = st.checkbox('Set Citation as bubble size')
-        size_value = None
-        if size_button:
-          size_value = 'Citation'
-        fig = px.scatter(
-              final, 
-              x="Year", 
-              y="Citation", 
-              color="Publication",
-              size=size_value, 
-              log_x=True, 
-              size_max=60
-              )
+
 
         with st.expander("Distribution of papers by year and citation", expanded=True):
+          size_button = st.checkbox('Set Citation as bubble size')
+          size_value = None
+          if size_button:
+            size_value = 'Citation'
+
+          fig = px.scatter(
+                final, 
+                x="Year", 
+                y="Citation", 
+                color="Publication",
+                size=size_value, 
+                log_x=True, 
+                size_max=60
+                )
           st.plotly_chart(fig, theme="streamlit", use_container_width=True)
         
