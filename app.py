@@ -6,7 +6,7 @@ import pandas as pd
 import re
 import time
 from time import sleep
-
+import plotly.express as px
 from function import get_paperinfo, get_tags, get_papertitle, get_citecount, get_link, get_author_year_publi_info, cite_number
 
 # title
@@ -83,4 +83,19 @@ if text_input:
             # sleep(10)
         final['Year'] = final['Year'].astype('int')
         final['Citation'] = final['Citation'].apply(cite_number).astype('int')
-        st.dataframe(final)
+        with st.expander("Extracted papers")
+          st.dataframe(final)
+
+        fig = px.scatter(
+              final, 
+              x="Year", 
+              y="Citation", 
+              color="Publication",
+              size="Citation", 
+              log_x=True, 
+              size_max=60
+              )
+
+        with st.expander("Distribution of papers by year and citation", expanded=True):
+          st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+        

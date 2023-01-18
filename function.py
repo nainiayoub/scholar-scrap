@@ -92,8 +92,11 @@ def get_author_year_publi_info(authors_tag):
   return years , publication, authors
 
 def cite_number(text):
+  if text != 0:
     result = text.split()[-1]
-    return result
+  else:
+    result = str(text)
+  return result
 
 
 
