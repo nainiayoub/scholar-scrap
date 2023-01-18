@@ -83,7 +83,7 @@ if text_input:
             # sleep(10)
         final['Year'] = final['Year'].astype('int')
         final['Citation'] = final['Citation'].apply(cite_number).astype('int')
-        with st.expander("Extracted papers")
+        with st.expander("Extracted papers"):
           st.dataframe(final)
 
         fig = px.scatter(
