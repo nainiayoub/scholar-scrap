@@ -19,7 +19,7 @@ html_temp = """
 with st.sidebar:
     st.markdown("""
     # Scholar Scrap
-    A tool to extract the relevant information of research papers from Google Scholar based on user input. 
+    A tool to extract relevant information of research papers from Google Scholar based on user input. 
     """)
     
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
