@@ -78,7 +78,7 @@ def get_author_year_publi_info(authors_tag):
       authortag_text = (authors_tag[i].text).split()
       # year = int(re.search(r'\d+', authors_tag[i].text).group())
       # years.append(year)
-      datesearch = re.findall("\b(19\d{2}\b|20\d{2}\b)", authors_tag[i].text)
+      datesearch = re.findall("\\b(19\d{2}|20\d{2})\\b", authors_tag[i].text)
       if len(datesearch) > 0:
         year = int(datesearch[0])
         years.append(year)
