@@ -1,5 +1,5 @@
 # Scholar Scrap
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://nainiayoub-scholar-scrap-app-r62qim.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://scholar-paper-extractor.streamlit.app/)
 ![visitor badge](https://visitor-badge.glitch.me/badge?page_id=nainiayoub.scholar-scrap)
 ![forks badge](https://img.shields.io/github/forks/nainiayoub/scholar-scrap)
 ![starts badge](https://img.shields.io/github/stars/nainiayoub/scholar-scrap?style=social)
