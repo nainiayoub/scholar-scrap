@@ -6,6 +6,8 @@
 
 Scholar Scrap is a helper tool that takes your text input and searches directly in Google Scholar for you, providing relevant information of research papers from Google Scholar results.
 
+https://user-images.githubusercontent.com/50157142/213689289-971f91aa-9809-4fa3-b5f7-fbcea6b012d5.mp4
+
 ## How does it work?
 * Simply enter your keywords in the text field.
 * Select how many pages to scrap from Google Scholar results.
@@ -16,7 +18,6 @@ Scholar Scrap is a helper tool that takes your text input and searches directly 
 
 _PS: A chart is also provided to display the distribution of papers by year and number of citations._
 
-## Scholar Scrap demo
 
-https://user-images.githubusercontent.com/50157142/213689289-971f91aa-9809-4fa3-b5f7-fbcea6b012d5.mp4
+
 
