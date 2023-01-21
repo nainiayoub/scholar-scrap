@@ -18,7 +18,7 @@ html_temp = """
 
 with st.sidebar:
     st.markdown("""
-    # Scholar Scrap
+    # About
     A tool to extract relevant information of research papers from Google Scholar based on user input. 
     """)
     
