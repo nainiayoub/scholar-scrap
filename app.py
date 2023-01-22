@@ -89,7 +89,7 @@ url_end = '&hl=en&as_sdt=0,5='
 # input
 col1, col2 = st.columns([3,1])
 with col1:
-  text_input = st.text_input("Search in Google Scholar", placeholder="What are you looking for?")
+  text_input = st.text_input("Search in Google Scholar", placeholder="What are you looking for?", disabled=True)
 with col2:
   total_to_scrap = st.slider("How many pages to scrap?", min_value=1, max_value=5, step=1, value=2)
 
