@@ -127,7 +127,8 @@ if text_input:
             final = add_in_paper_repo(papername,year,author,cite,publication,link)
 
             # use sleep to avoid status code 429
-            # sleep(10)
+            sleep(10)
+		
         final['Year'] = final['Year'].astype('int')
         final['Citation'] = final['Citation'].apply(cite_number).astype('int')
 
