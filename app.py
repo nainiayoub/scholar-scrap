@@ -150,9 +150,9 @@ if text_input:
           size_value = None
           if size_button:
             size_value = 'Citation'
-
+          final_sorted = final.sort_values(by='Year', ascending=True)
           fig = px.scatter(
-                final, 
+                final_sorted, 
                 x="Year", 
                 y="Citation", 
                 color="Publication site",
@@ -160,6 +160,6 @@ if text_input:
                 log_x=True, 
                 size_max=60
                 )
-	  
+          fig.update_xaxes(type='category')
           st.plotly_chart(fig, theme="streamlit", use_container_width=True)
         
