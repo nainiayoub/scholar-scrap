@@ -160,6 +160,6 @@ if text_input:
                 log_x=True, 
                 size_max=60
                 )
-	  fig.update_xaxes(type='category')
+	  
           st.plotly_chart(fig, theme="streamlit", use_container_width=True)
         
