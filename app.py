@@ -154,7 +154,6 @@ if text_input:
           fig = px.scatter(
                 final_sorted, 
                 x="Year", 
-                y="Citation", 
                 color="Publication site",
                 size=size_value, 
                 log_x=True, 
