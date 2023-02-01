@@ -146,7 +146,7 @@ if text_input:
 
 
         with st.expander("Distribution of papers by year and citation", expanded=True):
-          size_button = st.checkbox('Set Citation as bubble size')
+          size_button = st.checkbox('Set Citation as bubble size', value=True)
           size_value = None
           if size_button:
             size_value = 'Citation'
