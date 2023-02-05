@@ -42,9 +42,7 @@ footer{
 .viewerBadge_container__1QSob{
     visibility: hidden;
 }
-#MainMenu{
-	visibility: hidden;
-}
+
 <style>
 """
 st.markdown(hide, unsafe_allow_html=True)
