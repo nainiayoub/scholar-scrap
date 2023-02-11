@@ -142,7 +142,7 @@ if text_input:
         )
 
         # Plots
-        col1, col2 = st.columns(2)
+        col1, col2 = st.columns([2,1])
 
         with col1:
           with st.expander("Distribution of papers by year and citation", expanded=True):
