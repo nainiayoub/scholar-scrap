@@ -134,29 +134,46 @@ if text_input:
           st.dataframe(final)
           csv = convert_df(final)
           file_name_value = "_".join(text_input.split())+'.csv'
-          st.download_button(
-              label="Download data as CSV",
-              data=csv,
-              file_name=file_name_value,
-              mime='text/csv',
-          )
+        st.download_button(
+            label="Download data as CSV",
+            data=csv,
+            file_name=file_name_value,
+            mime='text/csv',
+        )
 
+        # Plots
+        col1, col2 = st.columns(2)
 
+        with col1:
+          with st.expander("Distribution of papers by year and citation", expanded=True):
+            size_button = st.checkbox('Set Citation as bubble size', value=True)
+            size_value = None
+            if size_button:
+              size_value = 'Citation'
+            final_sorted = final.sort_values(by='Year', ascending=True)
+            fig1 = px.scatter(
+                  final_sorted, 
+                  x="Year", 
+                  color="Publication site",
+                  size=size_value, 
+                  log_x=True, 
+                  size_max=60
+                  )
+            fig1.update_xaxes(type='category')
+            st.plotly_chart(fig1, theme="streamlit", use_container_width=True)
 
-        with st.expander("Distribution of papers by year and citation", expanded=True):
-          size_button = st.checkbox('Set Citation as bubble size', value=True)
-          size_value = None
-          if size_button:
-            size_value = 'Citation'
-          final_sorted = final.sort_values(by='Year', ascending=True)
-          fig = px.scatter(
-                final_sorted, 
-                x="Year", 
-                color="Publication site",
-                size=size_value, 
-                log_x=True, 
-                size_max=60
+        with col2:
+          percentage_sites = {}
+          sites = list(final_sorted['Publication site'])
+          for i in sites:
+            percentage_sites[i] = sites.count(i)/len(sites)*100
+          df_per = pd.DataFrame(list(zip(percentage_sites.keys(), percentage_sites.values())), columns=['sites', 'percentage'])
+    
+          fig2 = px.pie(
+                df_per, 
+                values="percentage", 
+                names="sites", 
                 )
-          fig.update_xaxes(type='category')
-          st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+          with st.expander("Percentage of publication sites", expanded=True):
+            st.plotly_chart(fig2, theme="streamlit", use_container_width=True)
         
