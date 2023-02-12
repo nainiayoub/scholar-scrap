@@ -11,7 +11,7 @@ Scholar Scrap is a helper tool that takes your text input and searches directly 
 * [How to support the project?](#how-to-support-the-project)
 
 ## Demo
-https://user-images.githubusercontent.com/50157142/213689289-971f91aa-9809-4fa3-b5f7-fbcea6b012d5.mp4
+https://user-images.githubusercontent.com/50157142/218341427-45d515e1-2025-4706-b24f-b4a8cac48982.mp4
 
 ## How does it work?
 * Simply enter your keywords in the text field.
@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/50157142/213689289-971f91aa-9809-4fa3-
 |Paper title | Year | Author | Number of citations | Publication site | URL of the paper |
 | ---------- | ---- | ------ | ------------------- | ---------------- | ---------------- |
 
-_PS: A chart is also provided to display the distribution of papers by year and number of citations._
+_PS: Downloadable charts are also provided to display the distribution of papers by year and number of citations as well as by publication sites._
 
 ## How to support the project
 You can help support the project through feedback and/or [buy me coffee](https://www.buymeacoffee.com/nainiayoub).
