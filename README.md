@@ -6,6 +6,8 @@
 
 Scholar Scrap is a helper tool that takes your text input and searches directly in Google Scholar for you, providing relevant information of research papers from Google Scholar results.
 
+_Featured on [Streamlit Weekly Roundup](https://discuss.streamlit.io/t/weekly-roundup-ask-pdfs-image-recognition-in-snowflake-scholar-scraps-and-more/37663) :balloon:_
+
 * [Demo](#demo)
 * [How does it work?](#how-does-it-work)
 * [How to support the project?](#how-to-support-the-project)
