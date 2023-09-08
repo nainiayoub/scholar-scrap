@@ -97,7 +97,7 @@ col1, col2 = st.columns([3,1])
 with col1:
   text_input = st.text_input("Search in Google Scholar", placeholder="What are you looking for?", disabled=False)
 with col2:
-  total_to_scrap = st.slider("How many pages to scrap?", min_value=1, max_value=5, step=1, value=2)
+  total_to_scrap = st.slider("How many pages to scrap?", min_value=0, max_value=4, step=1, value=1)
 
 st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
 # create scholar url
